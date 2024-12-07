@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Book an Appointment</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- Header -->
+<header class="bg-dark text-white shadow-md sticky-top">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+        <div class="logo">
+            <img src="https://via.placeholder.com/120" alt="Auto Mechanica Logo" loading="lazy">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link text-white active" href="appointment.html">Book Appointment</a></li> <!-- Highlight active page -->
+                <li class="nav-item"><a class="nav-link text-white" href="reviews.html">Customer Reviews</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Header Section -->
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1>Book an Appointment</h1>
+        </div>
+    </header>
+
+    <!-- Appointment Booking Form -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Fill in Your Details</h2>
+            <form action="submit_appointment.php" method="POST">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="service" class="form-label">Select Service</label>
+                    <select class="form-control" id="service" name="service" required>
+                        <option value="AI Diagnostics">AI Diagnostics</option>
+                        <option value="Predictive Maintenance">Predictive Maintenance</option>
+                        <option value="Smart Repairs">Smart Repairs</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Preferred Time</label>
+                    <input type="time" class="form-control" id="time" name="time" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit Appointment</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Auto Mechanica. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

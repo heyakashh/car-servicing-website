@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Customer Reviews</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- Header -->
+<header class="bg-dark text-white shadow-md sticky-top">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+        <div class="logo">
+            <img src="https://via.placeholder.com/120" alt="Auto Mechanica Logo" loading="lazy">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="appointment.html">Book Appointment</a></li>
+                <li class="nav-item"><a class="nav-link text-white active" href="reviews.html">Customer Reviews</a></li> <!-- Highlight active page -->
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Reviews Form -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Leave Your Feedback</h2>
+            <form action="submit_review.php" method="POST">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="review" class="form-label">Your Review</label>
+                    <textarea class="form-control" id="review" name="review" rows="4" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <select class="form-control" id="rating" name="rating" required>
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Good</option>
+                        <option value="3">3 - Average</option>
+                        <option value="2">2 - Below Average</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Auto Mechanica. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
