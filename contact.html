@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Contact Us - Auto Mechanica</title>
+</head>
+<body class="bg-light">
+    <!-- Header -->
+    <header class="bg-dark text-white py-4 shadow-lg">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="https://via.placeholder.com/150" alt="Auto Mechanica Logo" class="me-3" style="height: 60px;">
+                <h1 class="h5 mb-0">Auto Mechanica</h1>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white active" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="contact py-5">
+            <div class="container">
+                <h2 class="text-center text-primary fw-bold mb-4">Contact Us</h2>
+                <p class="text-center text-muted mb-5">Feel free to reach out to us for any queries or assistance. We're here to help!</p>
+                
+                <!-- Contact Form -->
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form class="p-4 shadow rounded bg-white">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Name:</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label fw-bold">Message:</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Additional Contact Information -->
+                <div class="row mt-5 text-center">
+                    <div class="col-md-4">
+                        <h5 class="text-primary fw-bold">Address</h5>
+                        <p class="text-muted">123 Auto Lane, Mechanica City</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="text-primary fw-bold">Phone</h5>
+                        <p class="text-muted">+1 234 567 890</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="text-primary fw-bold">Email</h5>
+                        <p class="text-muted">support@automechanica.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container text-center">
+                <h3 class="fw-bold mb-4">Find Us on the Map</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="400" src="https://www.google.com/maps/embed/v1/place?q=Mechanica+City&key=YOUR_GOOGLE_MAPS_API_KEY" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2024 Auto Mechanica. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
