@@ -1,4 +1,47 @@
 /* General Styles */
+:root {
+  --primary-color: #0056D2;
+  --secondary-color: #1E293B;
+  --accent-color: #E63946;
+  --background-color: #F8F9FA;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  font-family: 'Lato', sans-serif;
+}
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body, p {
+  font-family: 'Lato', sans-serif;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
