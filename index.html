@@ -12,34 +12,103 @@
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
-    <header class="bg-dark text-white shadow-md sticky-top">
-        <div class="container d-flex justify-content-between align-items-center py-3">
-            <div class="logo">
-                <img src="https://thumbs.dreamstime.com/b/square-logo-vector-art-design-344754067.jpg?w=768 " height="75" width="75" alt="Auto Mechanica Logo" loading="lazy">
+    <header class="bg-dark text-white py-4 shadow-lg">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="https://thumbs.dreamstime.com/b/square-logo-vector-art-design-344754067.jpg?w=768 " alt="Auto Mechanica Logo" class="me-3" style="height: 60px;">
+                <h1 class="h5 mb-0">Auto Mechanica</h1>
             </div>
-            <nav aria-label="Main Navigation">
-        <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white active" href="index.html">Home</a></li>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white active" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="service_plans.html">View Plans</a></li>
                 </ul>
             </nav>
+            
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero bg-cover bg-center text-white h-96 flex items-center justify-center" style="background-image: url('https://img.freepik.com/premium-photo/detail-view-car-wash-car-wash-foam-water-automatic-car-wash-action-generative-ai_528152-657.jpg?w=1060');">
-        <div class="text-center bg-black bg-opacity-50 p-5 rounded">
-            <h1 class="text-5xl font-bold">Experience the Future of Auto Services</h1>
-            <p class="mt-3 text-xl">AI-driven solutions for all your automotive needs.</p>
-            <a href="services.html" class="btn btn-danger btn-lg mt-4">Explore Our Services</a>
-            <!-- Appointment Booking Button -->
-            <a href="appointment.html" class="btn btn-primary btn-lg mt-4 mx-2">Book Appointment</a>
+    <!-- Hero Section -->
+<section class="hero bg-cover bg-center text-white h-screen flex items-center justify-center" 
+         style="background-image: url('https://img.freepik.com/premium-photo/detail-view-car-wash-car-wash-foam-water-automatic-car-wash-action-generative-ai_528152-657.jpg?w=1060');">
+    <div class="text-center bg-black bg-opacity-50 p-5 rounded fade-up">
+        <h1 class="display-3">Experience the Future of Auto Services</h1>
+        <p class="mt-3 lead">AI-driven solutions for all your automotive needs at your doorstep.</p>
+        <a href="#services" class="btn btn-warning btn-hover mt-3 px-4 py-2">Explore Our Services</a>
+        <a href="appointment.html" class="btn btn-primary btn-lg mt-4 mx-2">Book Appointment</a>
             <!-- Customer Reviews Button -->
-            <a href="reviews.html" class="btn btn-success btn-lg mt-4 mx-2">Customer Reviews</a>
+            <a href="reviews.html" class="btn btn-success btn-lg mt-4 mx-2">Customer Reviews</a>
+    </div>
+</section>
+
+<style>
+    .fade-up {
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0);}
+        }
+.service-icon {
+            font-size: 3rem;
+            color: #ff8800;}
+</style>
+<!-- Welcome Section -->
+<section class="py-5 bg-gray-200">
+    <div class="container text-center">
+        <h2 class="text-4xl font-bold mb-4">Welcome To Auto Mechanica</h2>
+        <p class="text-gray-600 mx-auto" style="max-width: 800px;">
+            We are not just a car care service; we are your partners in ensuring that your vehicle runs flawlessly and looks pristine. Our team blends AI technology with expert mechanics to deliver results that exceed expectations.
+        </p>
+        <a href="about.html" class="btn btn-dark btn-hover mt-3 px-4 py-2">Learn More</a>
+    </div>
+</section>
+<!-- Get to Know Us Section -->
+<!-- Get to Know Us Section -->
+<section class="py-5 bg-gray-900 text-white">
+    <div class="container text-center">
+        <!-- Title -->
+        <h2 class="text-4xl font-bold mb-4 animate-fadeIn">Get to Know Us</h2>
+        <p class="text-lg text-gray-300 mb-5 animate-fadeIn" style="max-width: 800px; margin: 0 auto;">
+            Whether you're at home, the office, or anywhere else, our skilled team is ready to bring a premium car wash experience directly to you. 
+            We use top-quality products and state-of-the-art equipment to ensure your vehicle receives the best care.
+        </p>
+
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="mb-3"><span class="service-icon">🚗</span></div>
+                <h4 class="font-bold">Door Step Service</h4>
+                <p>Convenience redefined with on-the-spot car care.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3"><span class="service-icon">⏱</span></div>
+                <h4 class="font-bold">On-Demand Service</h4>
+                <p>Book services at your preferred time with ease.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3"><span class="service-icon">🛠</span></div>
+                <h4 class="font-bold">Professional Detailing</h4>
+                <p>Top-notch detailing that keeps your car immaculate.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3"><span class="service-icon">🌱</span></div>
+                <h4 class="font-bold">Eco-Friendly</h4>
+                <p>Committed to a greener planet with sustainable services.</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Features Section -->
     <section class="features py-5">
@@ -108,7 +177,33 @@
         }
     }
 </style>
-
+<!-- Opening Hours Section -->
+<section class="py-5 bg-white">
+    <div class="container text-center">
+        <h2 class="text-4xl font-bold mb-4">Our Opening Hours</h2>
+        <p class="text-gray-600 mx-auto mb-5" style="max-width: 700px;">
+            We operate at convenient hours to ensure your car gets the best service when you need it. Check our timings below!
+        </p>
+        <div class="row justify-content-center">
+            <!-- Weekdays -->
+            <div class="col-md-5 mb-4">
+                <div class="border border-gray-300 shadow-lg rounded p-4 bg-light fade-up">
+                    <h3 class="text-2xl font-bold mb-3">Weekdays</h3>
+                    <p class="text-gray-700 font-medium">Monday - Friday</p>
+                    <p class="text-3xl font-bold text-warning">8:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+            <!-- Weekends -->
+            <div class="col-md-5 mb-4">
+                <div class="border border-gray-300 shadow-lg rounded p-4 bg-light fade-up">
+                    <h3 class="text-2xl font-bold mb-3">Weekends</h3>
+                    <p class="text-gray-700 font-medium">Saturday - Sunday</p>
+                    <p class="text-3xl font-bold text-warning">10:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- FAQ Section -->
     <section class="faq bg-light py-5">
         <div class="container">
