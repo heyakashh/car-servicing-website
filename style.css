@@ -98,7 +98,9 @@ body {
 .btn:hover {
   background: #e86a3d; /* Slightly darker on hover */
   transform: scale(1.05);
+  transition: transform 0.2s;
 }
+
 
 /* Features Section */
 .features {

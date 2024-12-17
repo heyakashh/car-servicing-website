@@ -44,7 +44,7 @@
             <div class="container text-center">
                 <h2 class="text-primary fw-bold mb-4">About Us</h2>
                 <p class="text-muted mb-4 fs-5">At Auto Mechanica, we leverage cutting-edge AI technology to provide unparalleled automotive services. Our team ensures your vehicle runs smoothly and efficiently.</p>
-                <img src="https://thumbs.dreamstime.com/b/mechanic-conducts-computer-diagnosis-vehicle-working-engine-repair-well-equipped-automotive-workshop-331716839.jpg" width="1500" alt="About Us" class="img-fluid rounded shadow mb-5">
+                <img class="img-fluid rounded shadow" style="text-align: center; padding: 1em 0; width: 80%; max-width: 600px; height: auto; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" src="https://thumbs.dreamstime.com/b/mechanic-conducts-computer-diagnosis-vehicle-working-engine-repair-well-equipped-automotive-workshop-331716839.jpg"  alt="About Us" class="img-fluid rounded shadow mb-5">
             </div>
         </section>
     </main>
@@ -93,15 +93,20 @@
         </section>
 
         <!-- Video Section -->
-        <section class="py-5 bg-primary text-white">
+        <section class="py-5 bg-primary text-white"> 
             <div class="container text-center">
                 <h3 class="fw-bold mb-4">Learn More About Our Services</h3>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="400" src="https://www.youtube.com/embed/watch?v=zyIQ3O2Qutc" allowfullscreen></iframe>
+                <div class="video-wrapper">
+                    <video class="rounded shadow" width="100%" height="400" controls>
+                        <source src="assets/vecteezy_mechanic-technician-team-person-are-repairing-car-engine_5622808.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <p class="mt-4">Watch our journey of innovation and excellence in automotive solutions.</p>
             </div>
         </section>
+        
+        
     </main>
 
     <!-- Footer -->
