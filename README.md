@@ -34,7 +34,7 @@ JavaScript (ES6)	Interactivity and dynamic functionality
 Clone this repository:
 bash
 Copy code
-git clone https://github.com/your-username/auto-mechanica.git
+git clone https://github.com/heyakashh/auto-mechanica.git
 Navigate to the project directory:
 bash
 Copy code
