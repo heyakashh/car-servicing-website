@@ -20,6 +20,7 @@
                 <h1 class="h5 mb-0">Auto Mechanica</h1>
             </div>
             <nav>
+                
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
@@ -27,6 +28,13 @@
                     <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="service_plans.html">View Service Plans</a></li>
                 </ul>
+                <!-- Cart Icon -->
+                <div class="cart-icon-container position-relative">
+                    <a id="cart-icon" href="cart.html" class="text-white">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count"></span>
+                    </a>
+                </div>
             </nav>
             
         </div>
@@ -118,7 +126,9 @@
                     </ul>
                     <h4 class="text-xl font-semibold mt-3">Price: ₹2,500</h4>
                     <div class="text-center mt-3">
-                        <button class="btn btn-primary px-4 py-2">Add</button>
+                        <button class="btn btn-outline-primary btn-sm add-btn">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
                     </div>
                 </div>
             </div>
@@ -142,7 +152,9 @@
                     </ul>
                     <h4 class="text-xl font-semibold mt-3">Price: ₹4,500</h4>
                     <div class="text-center mt-3">
-                        <button class="btn btn-primary px-4 py-2">Add</button>
+                        <button class="btn btn-outline-primary btn-sm add-btn">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
                     </div>
                 </div>
             </div>
@@ -168,7 +180,10 @@
                     </ul>
                     <h4 class="text-xl font-semibold mt-3">Price: ₹7,500</h4>
                     <div class="text-center mt-3">
-                        <button class="btn btn-primary px-4 py-2">Add</button>
+                        
+                        <button class="btn btn-outline-primary btn-sm add-btn">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
                     </div>
                 </div>
             </div>
@@ -435,5 +450,35 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const addToCart = (serviceName, servicePrice) => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (!cart.some(item => item.name === serviceName)) {
+                cart.push({ name: serviceName, price: servicePrice });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${serviceName} added to cart!`);
+            } else {
+                alert(`${serviceName} is already in the cart.`);
+            }
+        };
+
+        // Attach event listeners to "Add" and "Book Now" buttons
+        document.querySelectorAll('.add-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const serviceName = button.closest('.service-item, .card').querySelector('.service-name, .card-title').textContent.trim();
+                const servicePrice = button.closest('.service-item, .card').querySelector('.service-price, h4').textContent.match(/₹\d+/)[0];
+                addToCart(serviceName, servicePrice);
+            });
+        });
+
+        document.querySelectorAll('.btn-light').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceName = button.closest('.card').querySelector('.card-title').textContent.trim();
+                const servicePrice = button.closest('.card').querySelector('.card-text').textContent.match(/₹\d+/)?.[0] || '₹0';
+                addToCart(serviceName, servicePrice);
+            });
+        });
+    </script>
 </body>
 </html>

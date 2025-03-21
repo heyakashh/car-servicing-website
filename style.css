@@ -195,3 +195,25 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+/* Cart Icon Styles */
+.cart-icon-container {
+  margin-left: auto;
+  padding-right: 1rem;
+}
+
+.cart-icon-container a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+}
