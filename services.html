@@ -26,7 +26,6 @@
                     <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link text-white active" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="service_plans.html">View Service Plans</a></li>
                 </ul>
                 <!-- Cart Icon -->
                 <div class="cart-icon-container position-relative">
@@ -451,7 +450,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const addToCart = (serviceName, servicePrice) => {
+    const addToCart = async (serviceName, servicePrice) => {
+        try {
+            // First save to backend
+            const response = await fetch('http://localhost:8080/api/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: serviceName,
+                    price: servicePrice
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            // If backend save successful, then save to localStorage
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             if (!cart.some(item => item.name === serviceName)) {
                 cart.push({ name: serviceName, price: servicePrice });
@@ -460,25 +477,29 @@
             } else {
                 alert(`${serviceName} is already in the cart.`);
             }
-        };
+        } catch (error) {
+            console.error('Error adding item to cart:', error);
+            alert('Failed to add item to cart. Please try again.');
+        }
+    };
 
-        // Attach event listeners to "Add" and "Book Now" buttons
-        document.querySelectorAll('.add-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const serviceName = button.closest('.service-item, .card').querySelector('.service-name, .card-title').textContent.trim();
-                const servicePrice = button.closest('.service-item, .card').querySelector('.service-price, h4').textContent.match(/₹\d+/)[0];
-                addToCart(serviceName, servicePrice);
-            });
+    // Attach event listeners to "Add" and "Book Now" buttons
+    document.querySelectorAll('.add-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const serviceName = button.closest('.service-item, .card').querySelector('.service-name, .card-title').textContent.trim();
+            const servicePrice = button.closest('.service-item, .card').querySelector('.service-price, h4').textContent.match(/₹\d+/)[0];
+            addToCart(serviceName, servicePrice);
         });
+    });
 
-        document.querySelectorAll('.btn-light').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const serviceName = button.closest('.card').querySelector('.card-title').textContent.trim();
-                const servicePrice = button.closest('.card').querySelector('.card-text').textContent.match(/₹\d+/)?.[0] || '₹0';
-                addToCart(serviceName, servicePrice);
-            });
+    document.querySelectorAll('.btn-light').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const serviceName = button.closest('.card').querySelector('.card-title').textContent.trim();
+            const servicePrice = button.closest('.card').querySelector('.card-text').textContent.match(/₹\d+/)?.[0] || '₹0';
+            addToCart(serviceName, servicePrice);
         });
-    </script>
+    });
+</script>
 </body>
 </html>
