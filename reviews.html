@@ -31,7 +31,7 @@
     <section class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Leave Your Feedback</h2>
-            <form action="submit_review.php" method="POST">
+            <form action="thankyou-review.html" method="POST">
                 <div class="mb-3">
                     <label for="fullName" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="fullName" name="fullName" required>
@@ -118,7 +118,13 @@
             </div>
         </div>
     </section>
-
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            window.location.href = "thankyou-review.html"; // Redirect to thank you page
+        });
+    </script>
+    
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
