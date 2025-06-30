@@ -4,42 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Book an Appointment</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header-section {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        .header-section h1 {
+            margin: 0;
+        }
+        .form-section {
+            padding: 40px 0;
+        }
+        .form-section h2 {
+            margin-bottom: 30px;
+        }
+        .form-control {
+            border-radius: 0.25rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <!-- Header -->
-<header class="bg-dark text-white shadow-md sticky-top">
-    <div class="container d-flex justify-content-between align-items-center py-3">
-        <div class="logo">
-            <img src="https://thumbs.dreamstime.com/b/square-logo-vector-art-design-344754067.jpg?w=768 " height="75" width="75" alt="Auto Mechanica Logo" loading="lazy">
+    <header class="bg-dark text-white shadow-md sticky-top">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <div class="logo">
+                <img src="https://thumbs.dreamstime.com/b/square-logo-vector-art-design-344754067.jpg?w=768 " height="75" width="75" alt="Auto Mechanica Logo" loading="lazy">
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-white active" href="appointment.html">Book Appointment</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="reviews.html">Customer Reviews</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link text-white active" href="appointment.html">Book Appointment</a></li> <!-- Highlight active page -->
-                <li class="nav-item"><a class="nav-link text-white" href="reviews.html">Customer Reviews</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
+    </header>
 
     <!-- Header Section -->
-    <header class="bg-dark text-white py-3">
+    <header class="header-section text-center">
         <div class="container">
             <h1>Book an Appointment</h1>
         </div>
     </header>
 
     <!-- Appointment Booking Form -->
-    <section class="py-5">
+    <section class="form-section">
         <div class="container">
             <h2 class="text-center mb-4">Fill in Your Details</h2>
-            <form action="submit_appointment.php" method="POST">
+            <form id="appointment-form">
                 <div class="mb-3">
                     <label for="fullName" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="fullName" name="fullName" required>
@@ -47,6 +81,36 @@
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Address</label>
                     <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="carName" class="form-label">Car Name</label>
+                    <input type="text" class="form-control" id="carName" name="carName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="carColor" class="form-label">Car Color</label>
+                    <input type="text" class="form-control" id="carColor" name="carColor" required>
+                </div>
+                <div class="mb-3">
+                    <label for="bodyStyle" class="form-label">Body Style</label>
+                    <select class="form-control" id="bodyStyle" name="bodyStyle" required>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Micro SUV">Micro SUV</option>
+                        <option value="Crossover">Crossover</option>
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Coupe">Coupe</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="preVisit" class="form-label">Pre-Visit</label>
+                    <input type="number" class="form-control" id="preVisit" name="preVisit" required>
+                </div>
+                <div class="mb-3">
+                    <label for="loyalCustomer" class="form-label">Loyal Customer</label>
+                    <select class="form-control" id="loyalCustomer" name="loyalCustomer" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="service" class="form-label">Select Service</label>
@@ -61,8 +125,12 @@
                     <input type="date" class="form-control" id="date" name="date" required>
                 </div>
                 <div class="mb-3">
-                    <label for="time" class="form-label">Preferred Time</label>
-                    <input type="time" class="form-control" id="time" name="time" required>
+                    <label for="timeSlot" class="form-label">Preferred Time Slot</label>
+                    <select class="form-control" id="timeSlot" name="timeSlot" required>
+                        <option value="10am-12pm">10:00am - 12:00pm</option>
+                        <option value="2pm-3pm">2:00pm - 3:00pm</option>
+                        <option value="3:30pm-5:30pm">3:30pm - 5:30pm</option>
+                    </select>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Submit Appointment</button>
@@ -72,12 +140,50 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
+    <footer class="footer text-center">
+        <div class="container">
             <p>&copy; 2024 Auto Mechanica. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                carName: document.getElementById('carName').value,
+                carColor: document.getElementById('carColor').value,
+                bodyStyle: document.getElementById('bodyStyle').value,
+                preVisit: document.getElementById('preVisit').value,
+                loyalCustomer: document.getElementById('loyalCustomer').value,
+                service: document.getElementById('service').value,
+                date: document.getElementById('date').value,
+                timeSlot: document.getElementById('timeSlot').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:8080/api/appointments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                alert('Appointment booked successfully!');
+                window.location.href = 'index.html';
+            } catch (error) {
+                console.error('Error booking appointment:', error);
+                alert('Failed to book appointment. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -30,9 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let cartHTML = '';
             
             cart.forEach(item => {
-                // Handle the price string, removing the '?' character if present
-                const priceStr = item.price.replace('?', '₹');
-                const price = parseInt(priceStr.replace('₹', '').replace(',', '')) || 0;
+                const price = item.price;
                 total += price;
                 
                 cartHTML += `
@@ -40,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="card-title">${item.name || 'Unknown Item'}</h5>
-                                <p class="card-text text-muted">${priceStr}</p>
+                                <p class="card-text text-muted">₹${price.toLocaleString()}</p>
                             </div>
                         </div>
                     </div>
@@ -96,7 +94,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (checkoutButton) {
         checkoutButton.addEventListener('click', () => {
-            window.location.href = 'checkout.html';
+            window.location.href = 'appointment.html';
         });
     }
+
+    // Add to Cart button event listener
+    document.getElementById('add-to-cart-btn').addEventListener('click', async () => {
+        const itemName = document.getElementById('item-name').value;
+        const itemPrice = parseFloat(document.getElementById('item-price').value);
+
+        if (!itemName || isNaN(itemPrice)) {
+            alert('Please enter valid item details.');
+            return;
+        }
+
+        const cartItem = {
+            name: itemName,
+            price: itemPrice
+        };
+
+        try {
+            const response = await fetch('http://localhost:8080/api/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cartItem)
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            await displayCartItems();
+            alert('Item added to cart successfully!');
+        } catch (error) {
+            console.error('Error adding item to cart:', error);
+            alert('Failed to add item to cart. Please try again.');
+        }
+    });
 });

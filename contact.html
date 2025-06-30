@@ -14,7 +14,7 @@
     <header class="bg-dark text-white py-4 shadow-lg">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <img src="https://thumbs.dreamstime.com/b/square-logo-vector-art-design-344754067.jpg?w=768" alt="Auto Mechanica Logo" class="me-3" style="height: 60px;">
+                <img src="https://thumbs.dreamstime.com/b/square-logo-vector-art-design-344754067.jpg?w=768 " alt="Auto Mechanica Logo" class="me-3" style="height: 60px;">
                 <h1 class="h5 mb-0">Auto Mechanica</h1>
             </div>
             <nav>
@@ -25,16 +25,6 @@
                     <li class="nav-item"><a class="nav-link text-white active" href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="d-flex align-items-center">
-                <div class="cart-icon-container position-relative me-3">
-                    <a id="cart-icon" href="cart.html" class="text-white">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cart-count"></span>
-                    </a>
-                </div>
-                <a href="login.html" class="btn btn-outline-light me-2">Login</a>
-                <a href="signup.html" class="btn btn-warning">Signup</a>
-            </div>
         </div>
     </header>
 
@@ -48,7 +38,7 @@
                 <!-- Contact Form -->
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <form id="contact-form" class="p-4 shadow rounded bg-white">
+                        <form class="p-4 shadow rounded bg-white">
                             <div class="mb-3">
                                 <label for="name" class="form-label fw-bold">Name:</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
@@ -61,7 +51,7 @@
                                 <label for="message" class="form-label fw-bold">Message:</label>
                                 <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -85,15 +75,16 @@
         </section>
 
         <!-- Map Section -->
-        <section class="py-5 bg-primary text-white">
-            <div class="container text-center">
-                <h3 class="fw-bold mb-4">Find Us on the Map</h3>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <!-- Update the iframe src URL with your Google Maps link -->
-                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="400" src="https://www.google.com/maps/place/Sathyabama+University/@12.8679936,80.2226176,14z/data=!4m6!3m5!1s0x3a525b8c90befe2b:0x170ab8b5b21bb530!8m2!3d12.8728809!4d80.2260766!16zL20vMDcxZGNm?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
+        <!-- Map Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-4">Find Us on the Map</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <!-- Update the iframe src URL with your Google Maps link -->
+            <iframe class="embed-responsive-item rounded shadow" width="100%" height="400" src="https://www.google.com/maps/place/Sathyabama+University/@12.8679936,80.2226176,14z/data=!4m6!3m5!1s0x3a525b8c90befe2b:0x170ab8b5b21bb530!8m2!3d12.8728809!4d80.2260766!16zL20vMDcxZGNm?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
 
     </main>
 
@@ -103,12 +94,5 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            // ...process form data if needed...
-            window.location.href = 'thankyou.html';
-        });
-    </script>
 </body>
 </html>
